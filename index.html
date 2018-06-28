@@ -12,7 +12,22 @@
     <link href="styling.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'> 
 
-      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="/style.css">
+	<script>
+			$(document).ready(function(){
+							$('#form1').on('submit', e => {
+							e.preventDefault();
+							 $.post('/', $('#form1').serialize()).done(data => {
+									 document.getElementById("linkBoard").innerHTML = data.shortURL;
+							 });
+							 
+						});
+			});
+        </script>
+        
+
       <style>
     /* search box */
 
@@ -158,9 +173,9 @@ padding: 0;
       </div>
       <!-- search form 6 -->
       <div class="button_box2">
-         <form class="form-wrapper-2 cf">
-            <input type="text" placeholder="Paste URL..." required>
-               <button type="submit">Shorten</button>
+         <form class="form-wrapper-2 cf" id="form1">
+            <input type="text" name="bigURL" placeholder="Paste URL..." required>
+               <button form="form1">Shorten</button>
          </form>
       </div>
        <div class="jumbotron">
@@ -172,9 +187,10 @@ padding: 0;
       <!-- search form 7 -->
       <div class="button_box2">
          <form class="form-wrapper-2 cf">
-            <input type="text" placeholder="Search URL...">
-               <button type="submit">Go to</button>
-         </form>
+            <h4 id="linkBoard">Your Shorted Link</h4>   
+               
+         </form> 
+        
       </div>
       
       
