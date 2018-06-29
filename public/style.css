@@ -113,7 +113,7 @@
 /*Style body by adding background image and set it to cover, add font-family*/
 body{
     font-family: Arvo, serif;
-    background: url(http://freenaturestock.s3.amazonaws.com/232.jpg) no-repeat center center;
+    background: url(/images/232.jpg) no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
 }
